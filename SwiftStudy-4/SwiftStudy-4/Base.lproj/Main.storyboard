@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="pvd-gR-K5q">
+                                    <navigationItem id="pvd-gR-K5q">
                                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="REI-ut-aT9">
                                             <connections>
                                                 <action selector="addPressed:" destination="BYZ-38-t0r" id="PKz-8I-d2E"/>
@@ -54,6 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navigationBar" destination="pvd-gR-K5q" id="Q83-5u-Ya4"/>
                         <outlet property="tableView" destination="Z1x-gF-eFU" id="sTu-re-m0r"/>
                     </connections>
                 </viewController>
