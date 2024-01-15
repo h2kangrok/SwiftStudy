@@ -91,7 +91,7 @@ class ViewController: UIViewController {
                 return nil
             }
     }
-    
+    //MARK: UIAlertController
     func showEventAlert(for date: Date) {
         let alert = UIAlertController(title: "일정추가", message: "", preferredStyle: .alert)
         
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
     func addEvent(content: String, for date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
+//        let dateString = dateFormatter.string(from: date)
         
         if var existingEvents = events[date] {
             existingEvents.append(content)
@@ -148,7 +148,6 @@ extension ViewController: UITableViewDelegate {
             }
             
             tableView.reloadData()
-            
         }
     }
 }
@@ -169,7 +168,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let selectedDate = calendar.selectedDate ?? Date()
-        let dateString = DateFormatter.localizedString(from: selectedDate, dateStyle: .medium, timeStyle: .none)
+//        let dateString = DateFormatter.localizedString(from: selectedDate, dateStyle: .medium, timeStyle: .none)
         
         if let eventsForDate = events[selectedDate] {
             cell.textLabel?.text = eventsForDate[indexPath.row]
