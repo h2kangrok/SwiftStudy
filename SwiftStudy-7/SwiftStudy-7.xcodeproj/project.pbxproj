@@ -11,6 +11,7 @@
 		A00D0CEE2B5D66D60034AE08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D0CED2B5D66D60034AE08 /* ContentView.swift */; };
 		A00D0CF02B5D66D90034AE08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */; };
 		A00D0CF32B5D66D90034AE08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00D0CF22B5D66D90034AE08 /* Preview Assets.xcassets */; };
+		A00D0CFA2B5E5F830034AE08 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		A00D0CED2B5D66D60034AE08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A00D0CF22B5D66D90034AE08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				A00D0CED2B5D66D60034AE08 /* ContentView.swift */,
 				A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */,
 				A00D0CF12B5D66D90034AE08 /* Preview Content */,
+				A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */,
 			);
 			path = "SwiftStudy-7";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00D0CEE2B5D66D60034AE08 /* ContentView.swift in Sources */,
+				A00D0CFA2B5E5F830034AE08 /* StopWatchManager.swift in Sources */,
 				A00D0CEC2B5D66D60034AE08 /* SwiftStudy_7App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
