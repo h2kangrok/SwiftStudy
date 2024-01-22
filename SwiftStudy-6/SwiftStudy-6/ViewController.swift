@@ -27,13 +27,14 @@ class ViewController: UIViewController {
         self.tableView.delegate = self
         setCalendarUI()
         setTableViewUI()
+        
     }
     
     func setCalendarUI() {
         view.addSubview(calendar)
         view.backgroundColor = .white
         
-        // Set Auto Layout constraints
+        // setCalendar Autolayout
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             calendar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -43,14 +44,6 @@ class ViewController: UIViewController {
         ])
         
         calendar.locale = Locale(identifier: "ko_KR")
-        
-        calendar.calendarWeekdayView.weekdayLabels[0].text = "일"
-        calendar.calendarWeekdayView.weekdayLabels[1].text = "월"
-        calendar.calendarWeekdayView.weekdayLabels[2].text = "화"
-        calendar.calendarWeekdayView.weekdayLabels[3].text = "수"
-        calendar.calendarWeekdayView.weekdayLabels[4].text = "목"
-        calendar.calendarWeekdayView.weekdayLabels[5].text = "금"
-        calendar.calendarWeekdayView.weekdayLabels[6].text = "토"
         
         calendar.appearance.headerDateFormat = "YYYY년 MM월"
         calendar.appearance.headerTitleColor = UIColor(named: "FFFFFF")?.withAlphaComponent(0.9)
@@ -65,11 +58,11 @@ class ViewController: UIViewController {
     
     func setTableViewUI() {
         view.addSubview(tableView)
+//        view.safeAreaLayoutGuide.topAnchor, constant: 400),
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 20) ,           tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.heightAnchor.constraint(equalToConstant: 300)
         ])
@@ -77,20 +70,7 @@ class ViewController: UIViewController {
         
     }
     
-    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        switch dateFormatter.string(from: date) {
-            case dateFormatter.string(from: Date()):
-                return "오늘"
-                
-            default:
-                return nil
-            }
-    }
+    
     //MARK: UIAlertController
     func showEventAlert(for date: Date) {
         let alert = UIAlertController(title: "일정추가", message: "", preferredStyle: .alert)
@@ -133,6 +113,23 @@ extension ViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDe
 //        print(events)
         
     }
+    
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        print(dateFormatter.string(from: Date()))
+    
+        switch dateFormatter.string(from: date) {
+        case dateFormatter.string(from: Date()):
+                return "오늘"
+                
+        default:
+            return nil
+        }
+    }
 }
 
 //MARK: UITableViewDelegate
@@ -173,7 +170,6 @@ extension ViewController: UITableViewDataSource {
         if let eventsForDate = events[selectedDate] {
             cell.textLabel?.text = eventsForDate[indexPath.row]
         }
-        
         return cell
     }
 }
