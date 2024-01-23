@@ -21,6 +21,7 @@
 		A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A00D0CF22B5D66D90034AE08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
+		A00D0CFB2B600EC80034AE08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 				A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */,
 				A00D0CF12B5D66D90034AE08 /* Preview Content */,
 				A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */,
+				A00D0CFB2B600EC80034AE08 /* README.md */,
 			);
 			path = "SwiftStudy-7";
 			sourceTree = "<group>";
