@@ -12,12 +12,13 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color.pink
+            Color.black
             VStack(spacing: 0) {
                 ZStack{
-                    Color.black
+                    
                     Button(action: {
                         stopWatchManager.reset()
+                        print("reset")
                     }) {
                         Text("Reset")
                             .foregroundColor(.white)
@@ -38,6 +39,7 @@ struct ContentView: View {
 
                             Button(action: {
                                 stopWatchManager.start()
+                                print("play")
                             }) {
                                 Image(systemName: "play.fill")
                                     .foregroundColor(.white)
@@ -52,6 +54,7 @@ struct ContentView: View {
 
                             Button(action: {
                                 stopWatchManager.pause()
+                                print("pause")
                             }) {
                                 Image(systemName: "pause.fill")
                                     .foregroundColor(.white)
