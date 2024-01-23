@@ -38,6 +38,7 @@
 		A00D0CDF2B5D66D50034AE08 = {
 			isa = PBXGroup;
 			children = (
+				A00D0CFB2B600EC80034AE08 /* README.md */,
 				A00D0CEA2B5D66D60034AE08 /* SwiftStudy-7 */,
 				A00D0CE92B5D66D60034AE08 /* Products */,
 			);
@@ -59,7 +60,6 @@
 				A00D0CEF2B5D66D90034AE08 /* Assets.xcassets */,
 				A00D0CF12B5D66D90034AE08 /* Preview Content */,
 				A00D0CF92B5E5F830034AE08 /* StopWatchManager.swift */,
-				A00D0CFB2B600EC80034AE08 /* README.md */,
 			);
 			path = "SwiftStudy-7";
 			sourceTree = "<group>";
