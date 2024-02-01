@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State var shouldShowImagePicker = false
     @State var image: UIImage?
+    @State private var name = ""
     
     var body: some View {
         NavigationView {
@@ -29,7 +30,7 @@ struct ContentView: View {
                                     Text("Back")
                                 }
                                 Button {
-                                    
+                                    hideKeyboard()
                                 } label: {
                                     Text("Sign Up")
                                 }
@@ -61,8 +62,11 @@ struct ContentView: View {
                         }
                     }
                 } .padding(.bottom, 20)
-                VStack {
-                    Text("이름 들어갈 곳 (textField로 변경해야 함)")
+                VStack (alignment: .center){
+                    TextField("닉네임을 입력하세요",text: $name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(8)
                 }
                 
                 Spacer()
@@ -74,7 +78,6 @@ struct ContentView: View {
             ImagePicker(image: $image)
                 .ignoresSafeArea()
         }
-        
     }
 }
 
@@ -82,39 +85,3 @@ struct ContentView: View {
     ContentView()
 }
 
-struct ImagePicker: UIViewControllerRepresentable {
-    
-    @Binding var image: UIImage?
-    
-    private let controller = UIImagePickerController()
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
-    }
-    
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        
-        let parent: ImagePicker
-        
-        init(parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            parent.image = info[.originalImage] as? UIImage
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true)
-        }
-    }
-    func makeUIViewController(context: Context) -> some UIViewController {
-        controller.delegate = context.coordinator
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
-    }
-    
-}
