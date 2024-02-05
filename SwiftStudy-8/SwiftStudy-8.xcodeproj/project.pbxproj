@@ -14,8 +14,6 @@
 		A062ACF22B676C3300FDEECB /* SwiftStudy_8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A062ACF12B676C3300FDEECB /* SwiftStudy_8Tests.swift */; };
 		A062ACFC2B676C3300FDEECB /* SwiftStudy_8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A062ACFB2B676C3300FDEECB /* SwiftStudy_8UITests.swift */; };
 		A062ACFE2B676C3300FDEECB /* SwiftStudy_8UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A062ACFD2B676C3300FDEECB /* SwiftStudy_8UITestsLaunchTests.swift */; };
-		A062AD0C2B6A553600FDEECB /* HideKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A062AD0B2B6A553600FDEECB /* HideKeyBoard.swift */; };
-		A062AD0E2B6A92AD00FDEECB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A062AD0D2B6A92AD00FDEECB /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +45,6 @@
 		A062ACFB2B676C3300FDEECB /* SwiftStudy_8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudy_8UITests.swift; sourceTree = "<group>"; };
 		A062ACFD2B676C3300FDEECB /* SwiftStudy_8UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudy_8UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A062AD0A2B6810E800FDEECB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A062AD0B2B6A553600FDEECB /* HideKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoard.swift; sourceTree = "<group>"; };
-		A062AD0D2B6A92AD00FDEECB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +100,6 @@
 				A062ACE22B676C3100FDEECB /* ContentView.swift */,
 				A062ACE42B676C3300FDEECB /* Assets.xcassets */,
 				A062ACE62B676C3300FDEECB /* Preview Content */,
-				A062AD0B2B6A553600FDEECB /* HideKeyBoard.swift */,
-				A062AD0D2B6A92AD00FDEECB /* ViewModel.swift */,
 			);
 			path = "SwiftStudy-8";
 			sourceTree = "<group>";
@@ -266,8 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A062ACE32B676C3100FDEECB /* ContentView.swift in Sources */,
-				A062AD0C2B6A553600FDEECB /* HideKeyBoard.swift in Sources */,
-				A062AD0E2B6A92AD00FDEECB /* ViewModel.swift in Sources */,
 				A062ACE12B676C3100FDEECB /* SwiftStudy_8App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
