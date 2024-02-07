@@ -50,6 +50,7 @@
 		A037A9D32B70C4E2004638FF /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A037A9D52B71313B004638FF /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		A05435A42B7211D900CCC648 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		A0EDC4132B73DE7400B4AB1E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		A037A9972B70884E004638FF = {
 			isa = PBXGroup;
 			children = (
+				A0EDC4132B73DE7400B4AB1E /* README.md */,
 				A037A9A22B70884E004638FF /* SwiftStudy-9 */,
 				A037A9B32B708852004638FF /* SwiftStudy-9Tests */,
 				A037A9BD2B708852004638FF /* SwiftStudy-9UITests */,
