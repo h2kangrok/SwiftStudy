@@ -33,6 +33,7 @@ struct AddView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(todo.isEmpty ? Color.gray : Color.blue)
                         
                         Text("Add")
                             .font(.system(size: 15, weight: .bold))
