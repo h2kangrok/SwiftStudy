@@ -17,6 +17,7 @@
 		A004AFFF2B7CC91900048932 /* GridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004AFFE2B7CC91900048932 /* GridItem.swift */; };
 		A004B0032B7D005E00048932 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B0022B7D005E00048932 /* AddImageView.swift */; };
 		A004B0052B7D0D6B00048932 /* GridImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B0042B7D0D6B00048932 /* GridImageViewModel.swift */; };
+		A0E4F7042B7E6B8000361666 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4F7032B7E6B8000361666 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A004AFFE2B7CC91900048932 /* GridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItem.swift; sourceTree = "<group>"; };
 		A004B0022B7D005E00048932 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		A004B0042B7D0D6B00048932 /* GridImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridImageViewModel.swift; sourceTree = "<group>"; };
+		A0E4F7032B7E6B8000361666 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				A004AFF82B7CC2CB00048932 /* GridView.swift */,
 				A004B0022B7D005E00048932 /* AddImageView.swift */,
+				A0E4F7032B7E6B8000361666 /* ImagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				A004AFFF2B7CC91900048932 /* GridItem.swift in Sources */,
 				A004B0032B7D005E00048932 /* AddImageView.swift in Sources */,
 				A004B0052B7D0D6B00048932 /* GridImageViewModel.swift in Sources */,
+				A0E4F7042B7E6B8000361666 /* ImagePickerView.swift in Sources */,
 				A004AFCE2B7CBBC400048932 /* SwiftStudy_10App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

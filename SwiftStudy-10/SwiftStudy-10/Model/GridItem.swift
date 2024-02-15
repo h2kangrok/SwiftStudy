@@ -10,7 +10,8 @@ import SwiftUI
 struct GridItem: Identifiable {
     let id = UUID()
     let name: String
-    var image: UIImage
 }
+
+
 
 

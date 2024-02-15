@@ -18,8 +18,8 @@ struct GridView: View {
         NavigationStack {
             ScrollView (showsIndicators: false) {
                 HStack (alignment: .top, spacing: spacing) {
-                    LazyVStack {
-                        ForEach (gridImageViewModel.items.prefix(gridImageViewModel.items.count/2), id: \.id) { image in
+                    VStack {
+                        ForEach(gridImageViewModel.items, id: \.id) { image in
                             Image(image.name)
                                 .resizable()
                                 .scaledToFill()
@@ -27,14 +27,15 @@ struct GridView: View {
                                 .cornerRadius(10)
                         }
                     }
-                    LazyVStack {
-                        ForEach (gridImageViewModel.items.suffix(gridImageViewModel.items.count/2), id: \.id) { image in
-                            Image(image.name)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                            
+                    VStack {
+                        ForEach(gridImageViewModel.addImages.indices, id: \.self) { index in
+                            if let image = gridImageViewModel.addImages[index] {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .cornerRadius(10)
+                            }
                         }
                     }
                 }
@@ -42,16 +43,17 @@ struct GridView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    NavigationLink (destination: AddImageView()){
+                    NavigationLink(destination: AddImageView(addImages: $gridImageViewModel.addImages)) {
                         Image(systemName: "plus.app")
                     }
                 }
             }
-            .navigationTitle(Text("gird"))
+            .navigationTitle(Text("Grid"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
 
 #Preview {
     GridView()
