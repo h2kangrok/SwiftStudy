@@ -40,8 +40,8 @@ struct AddImageView: View {
                     }
                 }
                 
-                TextField("이미지 이름을 입력하세요.", text: $imageName)
-                    .padding()
+//                TextField("이미지 이름을 입력하세요.", text: $imageName)
+//                    .padding()
                 TextField("내용을 입력하세요.", text: $contents)
                     .padding()
                 

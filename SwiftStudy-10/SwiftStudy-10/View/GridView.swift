@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct GridView: View {
-    
     @StateObject var gridImageViewModel = GridImageViewModel()
-    
+
     let spacing: CGFloat = 10
     let horizontalPadding: CGFloat = 10
-    
+
     var body: some View {
-        NavigationStack {
-            ScrollView (showsIndicators: false) {
-                HStack (alignment: .top, spacing: spacing) {
-                    VStack {
-                        ForEach(gridImageViewModel.items, id: \.id) { image in
-                            Image(image.name)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                        }
-                    }
+        NavigationView {
+            ScrollView(showsIndicators: false) {
+                let combinedImages = gridImageViewModel.items.map { $0.name }
+
+                let halfIndex = combinedImages.count / 2
+                let firstHalf = Array(combinedImages.prefix(upTo: halfIndex))
+                let secondHalf = Array(combinedImages.suffix(from: halfIndex))
+
+                HStack(alignment: .top, spacing: spacing) {
                     VStack {
                         ForEach(gridImageViewModel.addImages.indices, id: \.self) { index in
                             if let image = gridImageViewModel.addImages[index] {
@@ -37,19 +33,40 @@ struct GridView: View {
                                     .cornerRadius(10)
                             }
                         }
+
+                        ForEach(firstHalf, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .cornerRadius(10)
+                        }
                     }
+                    .frame(maxWidth: .infinity)
+
+                    VStack {
+                        ForEach(secondHalf, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .cornerRadius(10)
+                        }
+                        
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 .padding(.horizontal, horizontalPadding)
             }
-            .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: AddImageView(addImages: $gridImageViewModel.addImages)) {
-                        Image(systemName: "plus.app")
-                    }
-                }
-            }
             .navigationTitle(Text("Grid"))
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                   ToolbarItem {
+                       NavigationLink(destination: AddImageView(addImages: $gridImageViewModel.addImages)) {
+                           Image(systemName: "plus.app")
+                       }
+                   }
+               }
         }
     }
 }
@@ -58,5 +75,6 @@ struct GridView: View {
 #Preview {
     GridView()
         .environmentObject(GridImageViewModel())
-        
+    
 }
+
