@@ -9,7 +9,8 @@ import SwiftUI
 
 struct GridView: View {
     @StateObject var gridImageViewModel = GridImageViewModel()
-
+    @State var firstNaviLinkActive = false
+    
     let spacing: CGFloat = 10
     let horizontalPadding: CGFloat = 10
 
@@ -62,19 +63,17 @@ struct GridView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                    ToolbarItem {
-                       NavigationLink(destination: AddImageView(addImages: $gridImageViewModel.addImages)) {
+                       NavigationLink(destination: AddImageView(firstNaviLinkActive: $firstNaviLinkActive, addImages: $gridImageViewModel.addImages), isActive: $firstNaviLinkActive) {
                            Image(systemName: "plus.app")
-                       }
-                   }
-               }
+                    }
+                }
+            }
         }
     }
 }
 
 
 #Preview {
-    GridView()
+   GridView()
         .environmentObject(GridImageViewModel())
-    
 }
-

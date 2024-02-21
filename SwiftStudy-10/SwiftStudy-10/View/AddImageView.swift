@@ -12,9 +12,10 @@ let steelGray = Color(white: 0.7)
 struct AddImageView: View {
     @State private var shouldShowImagePicker = false
     @State private var image: UIImage?
-    @State private var contents = ""
-    @State private var imageName = ""
+//    @State private var contents = ""
+//    @State private var imageName = ""
 //    @EnvironmentObject var gridImageViewModel: GridImageViewModel
+    @Binding var firstNaviLinkActive: Bool
     @Binding var addImages: [UIImage?]
     
     var body: some View {
@@ -40,15 +41,14 @@ struct AddImageView: View {
                     }
                 }
                 
-//                TextField("이미지 이름을 입력하세요.", text: $imageName)
+//                TextField("내용을 입력하세요.", text: $contents)
 //                    .padding()
-                TextField("내용을 입력하세요.", text: $contents)
-                    .padding()
                 
                 Spacer()
                 
                 Button {
                     addButtonPressed()
+                    firstNaviLinkActive = false
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10.0)
@@ -73,11 +73,8 @@ struct AddImageView: View {
 }
 
 #Preview {
-    AddImageView(addImages: .constant([]))
-//        .environmentObject(GridImageViewModel())
-        
+    AddImageView(firstNaviLinkActive: .constant(true), addImages: .constant([]))
 }
-
 
 
 
