@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct GridItem: Identifiable {
-    let id = UUID()
-    let name: String
+struct GridItem: Identifiable  {
+    var id = UUID()
+    var name: String
+    var text: String
 }
 
 

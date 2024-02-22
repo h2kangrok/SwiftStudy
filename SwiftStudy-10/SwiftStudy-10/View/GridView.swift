@@ -24,7 +24,31 @@ struct GridView: View {
                 let secondHalf = Array(combinedImages.suffix(from: halfIndex))
 
                 HStack(alignment: .top, spacing: spacing) {
-                    VStack {
+                    LazyVStack {
+                        ForEach(firstHalf, id: \.self) { imageName in
+                            
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .cornerRadius(10)
+                            
+                           
+                        }
+                        
+                        
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    LazyVStack {
+                        ForEach(secondHalf, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .cornerRadius(10)
+                        }
+                        
                         ForEach(gridImageViewModel.addImages.indices, id: \.self) { index in
                             if let image = gridImageViewModel.addImages[index] {
                                 Image(uiImage: image)
@@ -35,24 +59,6 @@ struct GridView: View {
                             }
                         }
 
-                        ForEach(firstHalf, id: \.self) { imageName in
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-
-                    VStack {
-                        ForEach(secondHalf, id: \.self) { imageName in
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                        }
                         
                     }
                     .frame(maxWidth: .infinity)
