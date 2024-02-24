@@ -72,7 +72,6 @@ struct GridView: View {
 
 #Preview {
     GridView()
-        .environmentObject(GridImageViewModel())
 }
 
 
