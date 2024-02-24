@@ -13,64 +13,56 @@ struct GridView: View {
     
     let spacing: CGFloat = 10
     let horizontalPadding: CGFloat = 10
-
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                let combinedImages = gridImageViewModel.items.map { $0.name }
-
-                let halfIndex = combinedImages.count / 2
-                let firstHalf = Array(combinedImages.prefix(upTo: halfIndex))
-                let secondHalf = Array(combinedImages.suffix(from: halfIndex))
-
+                
                 HStack(alignment: .top, spacing: spacing) {
-                    LazyVStack {
-                        ForEach(firstHalf, id: \.self) { imageName in
-                            
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                            
-                           
-                        }
-                        
-                        
-                    }
-                    .frame(maxWidth: .infinity)
-
-                    LazyVStack {
-                        ForEach(secondHalf, id: \.self) { imageName in
-                            Image(imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .cornerRadius(10)
-                        }
-                        
-                        ForEach(gridImageViewModel.addImages.indices, id: \.self) { index in
-                            if let image = gridImageViewModel.addImages[index] {
-                                Image(uiImage: image)
+                    LazyVGrid(columns: [GridItem( .adaptive(minimum: 180, maximum: 180))], spacing: 20) {
+                        ForEach(gridImageViewModel.items.indices.filter { $0 % 2 == 0 }, id: \.self) { index in
+                            let (content, image) = gridImageViewModel.items[index]
+                            VStack {
+                                Image(uiImage: image ?? UIImage())
                                     .resizable()
                                     .scaledToFill()
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .cornerRadius(10)
+                                
+                                Text(content)
+                                
                             }
                         }
-
-                        
                     }
                     .frame(maxWidth: .infinity)
+                    
+                    LazyVGrid(columns: [GridItem( .adaptive(minimum: 180, maximum: 180))], spacing: 20) {
+                        ForEach(gridImageViewModel.items.indices.filter { $0 % 2 != 0 }, id: \.self) { index in
+                            let (content, image) = gridImageViewModel.items[index]
+                            VStack {
+                                Image(uiImage: image ?? UIImage())
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .cornerRadius(10)
+                                
+                                Text(content)
+                                
+                            }
+                        }
+                    }
+                    
+                    
                 }
-                .padding(.horizontal, horizontalPadding)
+                .frame(maxWidth: .infinity)
             }
-            .navigationTitle(Text("Grid"))
+            .padding(.horizontal, horizontalPadding)
+            .navigationTitle(Text("GridView"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                   ToolbarItem {
-                       NavigationLink(destination: AddImageView(firstNaviLinkActive: $firstNaviLinkActive, addImages: $gridImageViewModel.addImages), isActive: $firstNaviLinkActive) {
-                           Image(systemName: "plus.app")
+                ToolbarItem {
+                    NavigationLink(destination: AddImageView(firstNaviLinkActive: $firstNaviLinkActive, items: $gridImageViewModel.items), isActive: $firstNaviLinkActive) {
+                        Image(systemName: "plus.app")
                     }
                 }
             }
@@ -78,8 +70,9 @@ struct GridView: View {
     }
 }
 
-
 #Preview {
-   GridView()
+    GridView()
         .environmentObject(GridImageViewModel())
 }
+
+

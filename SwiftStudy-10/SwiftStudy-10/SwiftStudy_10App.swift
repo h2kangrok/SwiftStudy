@@ -10,12 +10,9 @@ import SwiftUI
 @main
 struct SwiftStudy_10App: App {
     
-    @StateObject var gridImageViewModel = GridImageViewModel()
-    
     var body: some Scene {
         WindowGroup {
             GridView()
-                .environmentObject(gridImageViewModel)
         }
     }
 }

@@ -12,11 +12,9 @@ let steelGray = Color(white: 0.7)
 struct AddImageView: View {
     @State private var shouldShowImagePicker = false
     @State private var image: UIImage?
-//    @State private var contents = ""
-//    @State private var imageName = ""
-//    @EnvironmentObject var gridImageViewModel: GridImageViewModel
+    @State private var contents = ""
     @Binding var firstNaviLinkActive: Bool
-    @Binding var addImages: [UIImage?]
+    @Binding var items: [(String, UIImage?)]
     
     var body: some View {
         NavigationView {
@@ -41,8 +39,8 @@ struct AddImageView: View {
                     }
                 }
                 
-//                TextField("내용을 입력하세요.", text: $contents)
-//                    .padding()
+                TextField("내용을 입력하세요.", text: $contents)
+                    .padding()
                 
                 Spacer()
                 
@@ -68,14 +66,12 @@ struct AddImageView: View {
     }
     
     func addButtonPressed() {
-        self.addImages.append(self.image)
+        self.items.append((self.contents, self.image))
     }
 }
 
 #Preview {
-    AddImageView(firstNaviLinkActive: .constant(true), addImages: .constant([]))
+    AddImageView(firstNaviLinkActive: .constant(true), items: .constant([]))
 }
-
-
 
 
