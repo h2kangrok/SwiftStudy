@@ -39,8 +39,10 @@ struct AddImageView: View {
                     }
                 }
                 
-                TextField("내용을 입력하세요.", text: $contents)
+                TextField("내용을 입력하세요.", text: $contents, axis: .vertical)
+                    .frame(width: 300, height: 200)
                     .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Spacer()
                 
