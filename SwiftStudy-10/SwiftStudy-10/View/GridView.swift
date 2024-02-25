@@ -19,7 +19,7 @@ struct GridView: View {
             ScrollView(showsIndicators: false) {
                 
                 HStack(alignment: .top, spacing: spacing) {
-                    LazyVGrid(columns: [GridItem( .adaptive(minimum: 180, maximum: 180))], spacing: 20) {
+                    LazyVStack {
                         ForEach(gridImageViewModel.items.indices.filter { $0 % 2 == 0 }, id: \.self) { index in
                             let (content, image) = gridImageViewModel.items[index]
                             VStack {
@@ -36,7 +36,7 @@ struct GridView: View {
                     }
                     .frame(maxWidth: .infinity)
                     
-                    LazyVGrid(columns: [GridItem( .adaptive(minimum: 180, maximum: 180))], spacing: 20) {
+                    LazyVStack {
                         ForEach(gridImageViewModel.items.indices.filter { $0 % 2 != 0 }, id: \.self) { index in
                             let (content, image) = gridImageViewModel.items[index]
                             VStack {
