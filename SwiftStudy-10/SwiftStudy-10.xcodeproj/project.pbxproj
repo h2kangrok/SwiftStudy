@@ -49,6 +49,7 @@
 		A004AFF82B7CC2CB00048932 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		A004B0022B7D005E00048932 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		A004B0042B7D0D6B00048932 /* GridImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridImageViewModel.swift; sourceTree = "<group>"; };
+		A00AAB3E2B8BB79300FC2041 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0E4F7032B7E6B8000361666 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +81,7 @@
 		A004AFC12B7CBBC400048932 = {
 			isa = PBXGroup;
 			children = (
+				A00AAB3E2B8BB79300FC2041 /* README.md */,
 				A004AFCC2B7CBBC400048932 /* SwiftStudy-10 */,
 				A004AFDD2B7CBBC500048932 /* SwiftStudy-10Tests */,
 				A004AFE72B7CBBC500048932 /* SwiftStudy-10UITests */,
