@@ -10,22 +10,23 @@ import SwiftUI
 struct EditTasksView: View {
     
     @Binding var task: TasksModel
-    @State private var date = Date()
+    
     
     var body: some View {
         VStack {
-            Text("heelo")
+            TextField("New Task", text: $task.task)
             DatePicker(
                 "Start Date",
                 selection: $task.date,
                 displayedComponents: [.date])
             Picker("Task Status", selection: $task.status) {
-                ForEach(TaskStatus.allCases, id: \.self) { status in
-                    Text(status.rawValue).tag(status)
+                    Text("Not Started").tag("Not Started")
+                    Text("In progress").tag("In progress")
+                    Text("Complete").tag("Complete")
                 }
             }
             .pickerStyle(.segmented)
         }
     }
-}
+
 

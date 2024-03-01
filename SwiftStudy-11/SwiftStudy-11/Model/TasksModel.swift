@@ -15,8 +15,3 @@ struct TasksModel: Identifiable {
     var status: String
 }
 
-enum TaskStatus: String, CaseIterable, Codable {
-    case notStarted = "Not started"
-    case inProgress = "In progress"
-    case complete = "Complete"
-}

@@ -10,46 +10,49 @@ import SwiftUI
 struct TasksMainView: View {
     
     @State private var tasks: [TasksModel] = []
-    
-
+    @State private var Edit: Bool = false
     
     var body: some View {
         NavigationView {
             List {
-                
                 ForEach($tasks) { task in
-                    VStack(alignment: .leading) {
+                    if Edit {
+                        EditTasksView(task: task)
+                    } else {
                         TasksView(tasks: task)
-                        
                     }
                 }
             }
             .navigationTitle("Tasks")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        addTasks()
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Edit") {
-                        
+                    
+                    if Edit {
+                        Button ("Done"){
+                            Edit.toggle()
+                        }
+                    } else {
+                        HStack {
+                            Button {
+                                addTasks()
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+                            Button("Edit") {
+                                Edit.toggle()
+                            }
+                        }
                     }
                 }
             }
         }
-        
     }
     func addTasks() {
-       
+        
         let newTask = TasksModel(task: "New Task", date: Date(), status: "Not Started")
         tasks.append(newTask)
         print(tasks)
     }
-    
-    
 }
 
 
