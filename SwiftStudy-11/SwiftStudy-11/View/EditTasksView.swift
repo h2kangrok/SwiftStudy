@@ -11,7 +11,6 @@ struct EditTasksView: View {
     
     @Binding var task: TasksModel
     
-    
     var body: some View {
         VStack {
             TextField("New Task", text: $task.task)

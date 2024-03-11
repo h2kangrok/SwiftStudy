@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct TasksModel: Identifiable {
     var id = UUID()
     var task: String
