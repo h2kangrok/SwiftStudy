@@ -2,9 +2,7 @@
 
 간단한 stopwatch를 구현
 
-![531BA5D8-26E3-4022-9D6D-206142B30512_4_5005_c](https://github.com/h2kangrok/SwiftStudy/assets/129154834/08e27d52-0f87-49bd-bf6c-b2f510500223)
-
-
+![sw1](https://github.com/h2kangrok/SwiftStudy/assets/129154834/cf2fba11-b51b-4897-9b95-9d925788f771)
 
 프레임 워크: UIKit
 
