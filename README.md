@@ -4,12 +4,12 @@
 
 - 🎯Study 1 ~ 6 UIKit</br>
 
-  Study-1 -</br>
-  Study-2 -</br>
-  Study-3 -</br>
-  Study-4 -</br>
-  Study-5 -</br>
-  Study-6 -</br>
+  Study-1 - 간단한 stopwatch를 구현</br>
+  Study-2 - tableView, 검색기능 구현 </br>
+  Study-3 - CollectionView </br>
+  Study-4 - UIAlertController</br>
+  Study-5 - 기반: xcode에 image 파일들 저장&ensp;기능: textfield에 image 이름을 입력하면 해당하는 image 보여주기</br>
+  Study-6 - FSCalendar</br>
   
 - 🎯Study 7 ~ 진행중 SwiftUI</br>
 
